@@ -5,7 +5,9 @@ const startButton = document.getElementById("startButton");
 const canvas = document.getElementById("drawingCanvas");
 const ctx = canvas.getContext("2d");
 const colorPalette = document.querySelector(".color-palette");
+const generateOutlineButton = document.getElementById("generateOutlineButton");
 const clearButton = document.getElementById("clearButton");
+const saveButton = document.getElementById("saveButton");
 
 let currentColor = "black";
 let isDrawing = false;
@@ -33,9 +35,28 @@ colorPalette.addEventListener("click", (e) => {
   }
 });
 
+// Event listener for generating new outline
+generateOutlineButton.addEventListener("click", () => {
+  // Placeholder for AI-generated outline
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.strokeStyle = "black";
+  ctx.beginPath();
+  // Example: Draw a random shape
+  ctx.arc(250, 250, 100, 0, Math.PI * 2);
+  ctx.stroke();
+});
+
 // Event listener for clear button
 clearButton.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+// Event listener for save button
+saveButton.addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.download = "artwork.png";
+  link.href = canvas.toDataURL();
+  link.click();
 });
 
 // Drawing functions
