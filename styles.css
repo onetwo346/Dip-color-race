@@ -1,6 +1,5 @@
-/* styles.css */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
@@ -13,20 +12,35 @@ body {
 .intro-page {
   text-align: center;
   background-color: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 40px;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 90%;
 }
 
 .intro-page h1 {
   color: #333;
   font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .intro-page p {
   color: #666;
   font-size: 1.2rem;
   margin: 20px 0;
+  line-height: 1.6;
+}
+
+.intro-page .info {
+  text-align: left;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.intro-page .info p {
+  margin: 10px 0;
 }
 
 .pulsating-button {
@@ -38,6 +52,7 @@ body {
   border-radius: 50px;
   cursor: pointer;
   animation: pulsate 1.5s infinite;
+  margin-top: 20px;
 }
 
 @keyframes pulsate {
@@ -53,6 +68,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 90%;
 }
 
 .game-page.hidden {
@@ -67,24 +84,36 @@ canvas {
   border: 2px solid #333;
   background-color: #fff;
   cursor: crosshair;
+  margin-bottom: 20px;
 }
 
 .color-palette {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   margin-top: 10px;
 }
 
 .color {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   margin: 5px;
   border: 2px solid #333;
+  border-radius: 50%;
   cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color:hover {
+  transform: scale(1.1);
 }
 
 .buttons {
-  margin-top: 10px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .buttons button {
@@ -94,9 +123,24 @@ canvas {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
 .buttons button:hover {
   background-color: #555;
+}
+
+.brush-size {
+  margin-top: 20px;
+}
+
+.brush-size label {
+  font-size: 1rem;
+  color: #333;
+  margin-right: 10px;
+}
+
+.brush-size input {
+  width: 100px;
 }
