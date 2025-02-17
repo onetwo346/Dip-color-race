@@ -17,17 +17,31 @@ let brushSize = 5;
 startButton.addEventListener("click", () => {
   introPage.classList.add("hidden");
   gamePage.classList.remove("hidden");
+  resizeCanvas(); // Resize canvas for mobile devices
 });
 
 // Set up canvas
 ctx.lineWidth = brushSize;
 ctx.lineCap = "round";
 
-// Event listeners for drawing
+// Handle canvas resizing for mobile devices
+function resizeCanvas() {
+  const size = Math.min(window.innerWidth * 0.8, 500); // Limit canvas size
+  canvas.width = size;
+  canvas.height = size;
+}
+
+window.addEventListener("resize", resizeCanvas);
+
+// Event listeners for drawing (mouse and touch)
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("mouseout", stopDrawing);
+
+canvas.addEventListener("touchstart", startDrawing);
+canvas.addEventListener("touchmove", draw);
+canvas.addEventListener("touchend", stopDrawing);
 
 // Event listener for color selection
 colorPalette.addEventListener("click", (e) => {
@@ -60,21 +74,41 @@ saveButton.addEventListener("click", () => {
 
 // Drawing functions
 function startDrawing(e) {
+  e.preventDefault(); // Prevent scrolling on touch devices
   isDrawing = true;
   ctx.beginPath();
-  ctx.moveTo(e.offsetX, e.offsetY);
+  const { offsetX, offsetY } = getCoordinates(e);
+  ctx.moveTo(offsetX, offsetY);
 }
 
 function draw(e) {
+  e.preventDefault(); // Prevent scrolling on touch devices
   if (!isDrawing) return;
+  const { offsetX, offsetY } = getCoordinates(e);
   ctx.strokeStyle = currentColor;
-  ctx.lineTo(e.offsetX, e.offsetY);
+  ctx.lineTo(offsetX, offsetY);
   ctx.stroke();
 }
 
 function stopDrawing() {
   isDrawing = false;
   ctx.closePath();
+}
+
+// Get coordinates for both mouse and touch events
+function getCoordinates(e) {
+  const rect = canvas.getBoundingClientRect();
+  if (e.touches) {
+    return {
+      offsetX: e.touches[0].clientX - rect.left,
+      offsetY: e.touches[0].clientY - rect.top,
+    };
+  } else {
+    return {
+      offsetX: e.offsetX,
+      offsetY: e.offsetY,
+    };
+  }
 }
 
 // Generate random outline
@@ -89,19 +123,19 @@ function generateOutline() {
 
   switch (randomShape) {
     case "circle":
-      ctx.arc(250, 250, 100, 0, Math.PI * 2);
+      ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 4, 0, Math.PI * 2);
       break;
     case "square":
-      ctx.rect(150, 150, 200, 200);
+      ctx.rect(canvas.width / 4, canvas.height / 4, canvas.width / 2, canvas.height / 2);
       break;
     case "triangle":
-      ctx.moveTo(250, 150);
-      ctx.lineTo(150, 350);
-      ctx.lineTo(350, 350);
+      ctx.moveTo(canvas.width / 2, canvas.height / 4);
+      ctx.lineTo(canvas.width / 4, (canvas.height * 3) / 4);
+      ctx.lineTo((canvas.width * 3) / 4, (canvas.height * 3) / 4);
       ctx.closePath();
       break;
     case "star":
-      drawStar(250, 250, 100, 5, 0.5);
+      drawStar(canvas.width / 2, canvas.height / 2, canvas.width / 4, 5, 0.5);
       break;
   }
 
