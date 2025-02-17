@@ -9,7 +9,8 @@ body {
   margin: 0;
 }
 
-.container {
+/* Intro Page */
+.intro-page {
   text-align: center;
   background-color: white;
   padding: 20px;
@@ -17,8 +18,44 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.intro-page h1 {
   color: #333;
+  font-size: 2.5rem;
+}
+
+.intro-page p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.pulsating-button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  animation: pulsate 1.5s infinite;
+}
+
+@keyframes pulsate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Game Page */
+.game-page {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-page.hidden {
+  display: none;
 }
 
 .game-area {
