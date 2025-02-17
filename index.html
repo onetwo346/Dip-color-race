@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dip Color Race</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dip Color Race</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="intro" class="page">
-        <div class="intro-content">
-            <h1>Welcome to <span class="highlight">Dip Color Race</span>!</h1>
-            <p>Unleash your creativity by coloring unique outline designs. Tap below to start!</p>
-            <button id="startButton" class="pulsate">🎨 Tap to Start</button>
-            <p class="designer-credit">Design by <span class="highlight">Kofi Fosu</span> | <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
-        </div>
+  <div class="container">
+    <h1>Dip Color Race</h1>
+    <p>Tap to start coloring!</p>
+    <div class="game-area">
+      <canvas id="drawingCanvas" width="500" height="500"></canvas>
+      <div class="color-palette">
+        <div class="color" data-color="red"></div>
+        <div class="color" data-color="blue"></div>
+        <div class="color" data-color="green"></div>
+        <div class="color" data-color="yellow"></div>
+        <div class="color" data-color="purple"></div>
+        <div class="color" data-color="orange"></div>
+        <div class="color" data-color="black"></div>
+        <div class="color" data-color="white"></div>
+      </div>
+      <button id="clearButton">Clear Image</button>
     </div>
-    <div id="game" class="page" style="display:none;">
-        <div class="game-container">
-            <div class="canvas-container">
-                <canvas id="colorCanvas"></canvas>
-            </div>
-            <div id="toolbar">
-                <input type="color" id="colorChoice" value="#ff0000">
-                <button onclick="clearCanvas()">🧹 Clear</button>
-                <button onclick="generateOutline()">✨ Generate Outline</button>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
