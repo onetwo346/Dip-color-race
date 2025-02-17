@@ -1,4 +1,7 @@
 // script.js
+const introPage = document.getElementById("introPage");
+const gamePage = document.getElementById("gamePage");
+const startButton = document.getElementById("startButton");
 const canvas = document.getElementById("drawingCanvas");
 const ctx = canvas.getContext("2d");
 const colorPalette = document.querySelector(".color-palette");
@@ -6,6 +9,12 @@ const clearButton = document.getElementById("clearButton");
 
 let currentColor = "black";
 let isDrawing = false;
+
+// Show game page and hide intro page
+startButton.addEventListener("click", () => {
+  introPage.classList.add("hidden");
+  gamePage.classList.remove("hidden");
+});
 
 // Set up canvas
 ctx.lineWidth = 5;
