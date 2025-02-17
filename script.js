@@ -17,8 +17,8 @@ let brushSize = 5;
 
 // Show Game Page and Hide Intro Page
 startButton.addEventListener("click", () => {
-  introPage.classList.add("hidden");
-  gamePage.classList.remove("hidden");
+  introPage.style.display = "none";
+  gamePage.style.display = "block";
   resizeCanvas(); // Resize canvas for mobile devices
 });
 
@@ -41,8 +41,8 @@ canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("mouseout", stopDrawing);
 
-canvas.addEventListener("touchstart", startDrawing);
-canvas.addEventListener("touchmove", draw);
+canvas.addEventListener("touchstart", startDrawing, { passive: false });
+canvas.addEventListener("touchmove", draw, { passive: false });
 canvas.addEventListener("touchend", stopDrawing);
 
 // Event Listener for Color Selection
