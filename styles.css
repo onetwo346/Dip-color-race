@@ -108,6 +108,16 @@ canvas {
   transform: scale(1.1);
 }
 
+/* Assign actual colors to the palette */
+.color[data-color="red"] { background-color: red; }
+.color[data-color="blue"] { background-color: blue; }
+.color[data-color="green"] { background-color: green; }
+.color[data-color="yellow"] { background-color: yellow; }
+.color[data-color="purple"] { background-color: purple; }
+.color[data-color="orange"] { background-color: orange; }
+.color[data-color="black"] { background-color: black; }
+.color[data-color="white"] { background-color: white; }
+
 .buttons {
   margin-top: 20px;
   display: flex;
