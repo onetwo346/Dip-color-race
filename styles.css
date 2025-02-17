@@ -1,0 +1,163 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Intro Page */
+.intro-page {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.intro-page h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.intro-page p {
+  color: #666;
+  font-size: 1rem;
+  margin: 15px 0;
+  line-height: 1.5;
+}
+
+.intro-page .info {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.intro-page .info p {
+  margin: 8px 0;
+}
+
+.pulsating-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  animation: pulsate 1.5s infinite;
+  margin-top: 15px;
+}
+
+@keyframes pulsate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Game Page */
+.game-page {
+  text-align: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+}
+
+.game-page.hidden {
+  display: none;
+}
+
+.game-area {
+  margin-top: 15px;
+}
+
+canvas {
+  border: 2px solid #333;
+  background-color: #fff;
+  cursor: crosshair;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.color {
+  width: 35px;
+  height: 35px;
+  margin: 5px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.color:hover {
+  transform: scale(1.1);
+}
+
+/* Assign actual colors to the palette */
+.color[data-color="red"] { background-color: red; }
+.color[data-color="blue"] { background-color: blue; }
+.color[data-color="green"] { background-color: green; }
+.color[data-color="yellow"] { background-color: yellow; }
+.color[data-color="purple"] { background-color: purple; }
+.color[data-color="orange"] { background-color: orange; }
+.color[data-color="black"] { background-color: black; }
+.color[data-color="white"] { background-color: white; }
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #555;
+}
+
+.brush-size {
+  margin-top: 15px;
+}
+
+.brush-size label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-right: 10px;
+}
+
+.brush-size input {
+  width: 80px;
+}
