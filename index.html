@@ -10,7 +10,7 @@
   <!-- Intro Page -->
   <div id="introPage" class="intro-page">
     <h1>Welcome to Dip Color Race!</h1>
-    <p>Unleash your creativity and color your world.</p>
+    <p>Unleash your creativity with AI-generated outline images. Color them, save them, and share your masterpieces!</p>
     <button id="startButton" class="pulsating-button">Tap to Start</button>
   </div>
 
@@ -18,7 +18,10 @@
   <div id="gamePage" class="game-page hidden">
     <h1>Dip Color Race</h1>
     <div class="game-area">
+      <!-- Canvas for Drawing -->
       <canvas id="drawingCanvas" width="500" height="500"></canvas>
+
+      <!-- Color Palette -->
       <div class="color-palette">
         <div class="color" data-color="red"></div>
         <div class="color" data-color="blue"></div>
@@ -29,7 +32,13 @@
         <div class="color" data-color="black"></div>
         <div class="color" data-color="white"></div>
       </div>
-      <button id="clearButton">Clear Image</button>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button id="generateOutlineButton">Generate New Outline</button>
+        <button id="clearButton">Clear Image</button>
+        <button id="saveButton">Save Artwork</button>
+      </div>
     </div>
   </div>
 
