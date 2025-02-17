@@ -47,5 +47,5 @@ function clearCanvas() {
 
 function generateOutline() {
     // Placeholder for image generation API
-    alert("Generate Outline feature coming soon! We'll integrate an API for dynamic outline generation.");
+    alert("✨ Generate Outline feature coming soon! We'll integrate an API for dynamic outline generation.");
 }
