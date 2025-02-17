@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dip Color Race</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="intro">
+        <h1>Welcome to Dip Color Race!</h1>
+        <p>Choose an image, color it, and have fun! Tap below to start.</p>
+        <button id="startButton">Tap to Start</button>
+        <p class="designer-credit">Design by Kofi Fosu | Contact: <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
+    </div>
+    <div id="game" style="display:none;">
+        <canvas id="colorCanvas" width="500" height="500"></canvas>
+        <div id="toolbar">
+            <input type="color" id="colorChoice" value="#ff0000">
+            <button onclick="clearCanvas()">Clear Image</button>
+            <button onclick="generateOutline()">Generate Outline</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
