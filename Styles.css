@@ -1,0 +1,70 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+#intro {
+    margin-top: 20%;
+}
+
+#startButton {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.designer-credit {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+.designer-credit a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+
+#game {
+    margin-top: 20px;
+}
+
+#toolbar {
+    margin-top: 10px;
+}
+
+#toolbar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#toolbar button:hover {
+    background-color: #45a049;
+}
+
+#toolbar input[type="color"] {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
