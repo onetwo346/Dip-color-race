@@ -1,37 +1,68 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f8f9fa;
     color: #333;
+    text-align: center;
 }
 
-#intro {
-    margin-top: 20%;
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-#startButton {
+.intro-content {
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ff6f61;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+button {
     padding: 15px 30px;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #ff6f61;
-    color: white;
+    font-size: 1rem;
     border: none;
     border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.pulsate {
     animation: pulsate 2s infinite;
 }
 
 @keyframes pulsate {
     0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
 .designer-credit {
     margin-top: 20px;
-    font-size: 14px;
-    color: #777;
+    font-size: 0.9rem;
+    color: #888;
 }
 
 .designer-credit a {
@@ -39,27 +70,31 @@ body {
     text-decoration: none;
 }
 
-#game {
-    margin-top: 20px;
+/* Game Page Styles */
+.game-container {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#colorCanvas {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 #toolbar {
-    margin-top: 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 #toolbar button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 5px;
-    cursor: pointer;
-    background-color: #4CAF50;
+    background: #4CAF50;
     color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-#toolbar button:hover {
-    background-color: #45a049;
 }
 
 #toolbar input[type="color"] {
@@ -67,4 +102,20 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
 }
