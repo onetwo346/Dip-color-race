@@ -10,19 +10,21 @@
 <body>
     <div id="intro" class="page">
         <div class="intro-content">
-            <h1>Welcome to Dip Color Race!</h1>
+            <h1>Welcome to <span class="highlight">Dip Color Race</span>!</h1>
             <p>Unleash your creativity by coloring unique outline designs. Tap below to start!</p>
-            <button id="startButton" class="pulsate">Tap to Start</button>
-            <p class="designer-credit">Design by Kofi Fosu | <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
+            <button id="startButton" class="pulsate">🎨 Tap to Start</button>
+            <p class="designer-credit">Design by <span class="highlight">Kofi Fosu</span> | <a href="mailto:cosmoscoderr@gmail.com">cosmoscoderr@gmail.com</a></p>
         </div>
     </div>
     <div id="game" class="page" style="display:none;">
         <div class="game-container">
-            <canvas id="colorCanvas"></canvas>
+            <div class="canvas-container">
+                <canvas id="colorCanvas"></canvas>
+            </div>
             <div id="toolbar">
                 <input type="color" id="colorChoice" value="#ff0000">
-                <button onclick="clearCanvas()">Clear</button>
-                <button onclick="generateOutline()">Generate Outline</button>
+                <button onclick="clearCanvas()">🧹 Clear</button>
+                <button onclick="generateOutline()">✨ Generate Outline</button>
             </div>
         </div>
     </div>
